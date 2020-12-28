@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			width: 500px;
+			display: block;
+			margin: auto;
+		}
+		.navbar {
+			display: inline-grid;
+			grid-template-columns: auto auto auto auto auto;
+		}
+		.navbar > a {
+			 background-color: red;
+			 margin: 10px;
+			 padding: 5px;
+		}
+		a:hover {
+			cursor: pointer;
+			background-color: #FFEB3B;
+		}
+		p {
+			font-size: 16px;
+			margin-bottom: 30px;
+		}
+		#go-to-top {
+			width: 40px;
+			height: 40px;
+			border-radius: 40px;
+			background-color: aquamarine;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<navbar>
+		<h2 class="navbar logo-navbar">LOGO</h2>
+		<ul class="nav">
+			<li class="navlink">Home</li>
+			<li class="navlink">Experience</li>
+			<li class="navlink">Skill</li>
+			<li class="navlink">Profile & Contact</li>
+		</ul>
+	</navbar>
+	<div id="contenttop"></div>
+	<div class="navbar">
+		<a onclick="contentClick(1)">Content 1</a>
+		<a onclick="contentClick(2)">Content 2</a>
+		<a onclick="contentClick(3)">Content 3</a>
+		<a onclick="contentClick(4)">Content 4</a>
+		<a onclick="contentClick(5)">Content 5</a>
+	</div>
+	<p id="content1">Content 1 => Like the previous plugin in the list, this one let's you use snippets to write code faster. The difference here is that instead of JS expresions, Emmet works for HTML and CSS, letting you write long tags, nested elements, or whole page templates in one go.</p>
+	<p id="content2">Content 2 => Like the previous plugin in the list, this one let's you use snippets to write code faster. The difference here is that instead of JS expresions, Emmet works for HTML and CSS, letting you write long tags, nested elements, or whole page templates in one go.</p>
+	<p id="content3">Content 3 => Like the previous plugin in the list, this one let's you use snippets to write code faster. The difference here is that instead of JS expresions, Emmet works for HTML and CSS, letting you write long tags, nested elements, or whole page templates in one go.</p>
+	<p id="content4">Content 4 => Like the previous plugin in the list, this one let's you use snippets to write code faster. The difference here is that instead of JS expresions, Emmet works for HTML and CSS, letting you write long tags, nested elements, or whole page templates in one go.</p>
+	<p id="content5">Content 5 => Like the previous plugin in the list, this one let's you use snippets to write code faster. The difference here is that instead of JS expresions, Emmet works for HTML and CSS, letting you write long tags, nested elements, or whole page templates in one go.</p>
+	<a id="go-to-top" onclick="contentClick('top')">top</a>
+	<script type="text/javascript">
+		const contentClick = (value) => {
+			const component = document.getElementById(`content${value}`);
+			component.scrollIntoView({behavior: "smooth"});
+		}
+	</script>
+</body>
+</html>
